@@ -277,7 +277,6 @@
         .affiliations-section {
             background: white;
             padding: 5rem 2rem;
-            overflow: hidden;
         }
 
         .affiliations-section h2 {
@@ -288,66 +287,51 @@
             font-weight: 700;
         }
 
-        .affiliations-scroll {
-            display: flex;
-            gap: 2rem;
-            overflow-x: auto;
-            overflow-y: hidden;
-            padding: 1rem 0 2rem;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: #4a9d4e #f0f0f0;
+        .affiliations-list {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .affiliations-scroll::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .affiliations-scroll::-webkit-scrollbar-track {
-            background: #f0f0f0;
-            border-radius: 10px;
-        }
-
-        .affiliations-scroll::-webkit-scrollbar-thumb {
-            background: #4a9d4e;
-            border-radius: 10px;
-        }
-
-        .affiliations-scroll::-webkit-scrollbar-thumb:hover {
-            background: #2c5f2d;
-        }
-
-        .affiliation-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem;
-            min-width: 320px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 2px solid #f0f0f0;
-            scroll-snap-align: start;
+        .affiliation-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4a9d4e;
             transition: all 0.3s ease;
-            flex-shrink: 0;
         }
 
-        .affiliation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            border-color: #4a9d4e;
+        .affiliation-item:hover {
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transform: translateX(5px);
         }
 
-        .affiliation-card h3 {
-            font-size: 1.3rem;
+        .affiliation-item h3 {
+            font-size: 1.4rem;
             color: #1a472a;
             margin-bottom: 0.5rem;
             font-weight: 700;
-            line-height: 1.3;
         }
 
-        .affiliation-card .role {
+        .affiliation-item .role {
             color: #4a9d4e;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .affiliation-item p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .affiliation-item .sub-items {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            color: #666;
         }
 
         .contact-section h2 {
@@ -617,35 +601,38 @@
     <section class="affiliations-section">
         <div class="container">
             <h2>Organisational Affiliations</h2>
-            <div class="affiliations-scroll">
-                <div class="affiliation-card">
+            <div class="affiliations-list">
+                <div class="affiliation-item">
                     <h3>Urban Morph</h3>
-                    <p class="role">Co-Founder & Director</p>
+                    <span class="role">Co-Founder & Director</span>
+                    <p>Urban consulting agency working on sustainable cities, mobility planning, and climate-resilient urban design across India.</p>
                 </div>
 
-                <div class="affiliation-card">
-                    <h3>WattsNext Energy</h3>
-                    <p class="role">CEO</p>
-                </div>
-
-                <div class="affiliation-card">
+                <div class="affiliation-item">
                     <h3>Rainmatter Foundation</h3>
-                    <p class="role">Urban Thesis Lead</p>
+                    <span class="role">Urban Thesis Lead</span>
+                    <p>Delivering thesis-based investing for urban sustainability, waste management, energy transition, and sustainable materials.</p>
                 </div>
 
-                <div class="affiliation-card">
+                <div class="affiliation-item">
+                    <h3>WattsNext Energy</h3>
+                    <span class="role">CEO</span>
+                    <p>Redefining the way power is delivered for vehicles and built forms through innovative energy solutions.</p>
+                </div>
+
+                <div class="affiliation-item">
                     <h3>Bioman Technologies</h3>
-                    <p class="role">Director</p>
+                    <span class="role">Director</span>
+                    <p>Waste management startup innovating in circular economy solutions and sustainable waste processing.</p>
                 </div>
 
-                <div class="affiliation-card">
-                    <h3>Mount Carmel College</h3>
-                    <p class="role">Adjunct Faculty</p>
-                </div>
-
-                <div class="affiliation-card">
-                    <h3>Kautilya School of Public Policy</h3>
-                    <p class="role">Adjunct Faculty</p>
+                <div class="affiliation-item">
+                    <h3>Adjunct Faculty</h3>
+                    <span class="role">Teaching Urban Governance & Public Problem Solving</span>
+                    <div class="sub-items">
+                        • Kautilya School of Public Policy, Hyderabad<br>
+                        • Mount Carmel College, Bengaluru
+                    </div>
                 </div>
             </div>
         </div>
