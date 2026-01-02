@@ -273,6 +273,83 @@
             padding: 5rem 2rem;
         }
 
+        /* Organisational Affiliations Section */
+        .affiliations-section {
+            background: white;
+            padding: 5rem 2rem;
+            overflow: hidden;
+        }
+
+        .affiliations-section h2 {
+            font-size: 2.5rem;
+            color: #1a472a;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .affiliations-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 1rem 0 2rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #4a9d4e #f0f0f0;
+        }
+
+        .affiliations-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .affiliations-scroll::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .affiliations-scroll::-webkit-scrollbar-thumb {
+            background: #4a9d4e;
+            border-radius: 10px;
+        }
+
+        .affiliations-scroll::-webkit-scrollbar-thumb:hover {
+            background: #2c5f2d;
+        }
+
+        .affiliation-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            min-width: 320px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 2px solid #f0f0f0;
+            scroll-snap-align: start;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .affiliation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border-color: #4a9d4e;
+        }
+
+        .affiliation-card h3 {
+            font-size: 1.3rem;
+            color: #1a472a;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .affiliation-card .role {
+            color: #4a9d4e;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
         .contact-section h2 {
             font-size: 2.5rem;
             color: #1a472a;
@@ -531,6 +608,44 @@
                     <h3>Relief Riders</h3>
                     <p>COVID pandemic initiative that spread across 12 cities with 600+ volunteers, winning UN World Bicycle Day Award and Nobel Peace Prize nomination.</p>
                     <a href="https://www.cfam.in/reliefriders.html" target="_blank">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organisational Affiliations Section -->
+    <section class="affiliations-section">
+        <div class="container">
+            <h2>Organisational Affiliations</h2>
+            <div class="affiliations-scroll">
+                <div class="affiliation-card">
+                    <h3>Urban Morph</h3>
+                    <p class="role">Co-Founder & Director</p>
+                </div>
+
+                <div class="affiliation-card">
+                    <h3>WattsNext Energy</h3>
+                    <p class="role">CEO</p>
+                </div>
+
+                <div class="affiliation-card">
+                    <h3>Rainmatter Foundation</h3>
+                    <p class="role">Urban Thesis Lead</p>
+                </div>
+
+                <div class="affiliation-card">
+                    <h3>Bioman Technologies</h3>
+                    <p class="role">Director</p>
+                </div>
+
+                <div class="affiliation-card">
+                    <h3>Mount Carmel College</h3>
+                    <p class="role">Adjunct Faculty</p>
+                </div>
+
+                <div class="affiliation-card">
+                    <h3>Kautilya School of Public Policy</h3>
+                    <p class="role">Adjunct Faculty</p>
                 </div>
             </div>
         </div>
