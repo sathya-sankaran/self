@@ -20,7 +20,7 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #3d7a4f 100%);
+            background: #1a1a1a;
             color: white;
             display: flex;
             align-items: center;
@@ -31,6 +31,45 @@
             overflow: hidden;
         }
 
+        /* Hero Image Carousel */
+        .hero-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeInOut 48s infinite;
+        }
+
+        .hero-image:nth-child(1) { animation-delay: 0s; }
+        .hero-image:nth-child(2) { animation-delay: 6s; }
+        .hero-image:nth-child(3) { animation-delay: 12s; }
+        .hero-image:nth-child(4) { animation-delay: 18s; }
+        .hero-image:nth-child(5) { animation-delay: 24s; }
+        .hero-image:nth-child(6) { animation-delay: 30s; }
+        .hero-image:nth-child(7) { animation-delay: 36s; }
+        .hero-image:nth-child(8) { animation-delay: 42s; }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            2.08% { opacity: 0.4; }
+            12.5% { opacity: 0.4; }
+            14.58% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* Dark overlay for better image contrast */
         .hero::before {
             content: '';
             position: absolute;
@@ -38,15 +77,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(74, 157, 78, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(44, 95, 45, 0.3) 0%, transparent 50%);
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
             pointer-events: none;
         }
 
         .hero-content {
             max-width: 900px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -55,6 +94,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             letter-spacing: -0.02em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .hero .tagline {
@@ -63,14 +103,7 @@
             margin-bottom: 2.5rem;
             font-weight: 300;
             line-height: 1.4;
-        }
-
-        .hero .subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            opacity: 0.85;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.6;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .scroll-indicator {
@@ -81,6 +114,7 @@
             font-size: 2rem;
             opacity: 0.6;
             animation: bounce 2s infinite;
+            z-index: 2;
         }
 
         @keyframes bounce {
@@ -148,8 +182,19 @@
 
         .impact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
+        }
+
+        .impact-card:nth-child(4),
+        .impact-card:nth-child(5) {
+            grid-column: span 1;
+        }
+
+        /* Center the last row with 2 items */
+        .impact-grid::after {
+            content: '';
+            grid-column: 3;
         }
 
         .impact-card {
@@ -160,6 +205,8 @@
             transition: all 0.3s ease;
             border: 2px solid #f0f0f0;
             text-align: center;
+            display: flex;
+            flex-direction: column;
         }
 
         .impact-card:hover {
@@ -176,6 +223,12 @@
             display: block;
         }
 
+        .impact-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
         .impact-card h3 {
             font-size: 1.5rem;
             color: #1a472a;
@@ -187,6 +240,7 @@
             color: #666;
             margin-bottom: 1.5rem;
             line-height: 1.6;
+            flex-grow: 1;
         }
 
         .impact-card a {
@@ -198,6 +252,7 @@
             border: 2px solid #4a9d4e;
             border-radius: 8px;
             transition: all 0.3s ease;
+            margin-top: auto;
         }
 
         .impact-card a:hover {
@@ -248,6 +303,15 @@
             flex-wrap: wrap;
         }
 
+        .cc-license a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cc-license a:hover {
+            text-decoration: underline;
+        }
+
         .cc-license img {
             height: 31px;
             width: auto;
@@ -268,6 +332,16 @@
         }
 
         /* Responsive */
+        @media (max-width: 968px) {
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .impact-grid::after {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .about-content {
                 grid-template-columns: 1fr;
@@ -294,10 +368,19 @@
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-images">
+            <img src="hero1.jpg" alt="Sathya speaking at event" class="hero-image">
+            <img src="hero2.jpg" alt="Sathya at conference" class="hero-image">
+            <img src="hero3.jpg" alt="Sathya cycling" class="hero-image">
+            <img src="hero4.jpg" alt="Sathya with award" class="hero-image">
+            <img src="hero5.jpg" alt="Sathya presenting" class="hero-image">
+            <img src="hero6.jpg" alt="Sathya cycling in suit" class="hero-image">
+            <img src="hero7.jpg" alt="Sathya speaking with cycling backdrop" class="hero-image">
+            <img src="hero8.jpg" alt="Sathya being interviewed" class="hero-image">
+        </div>
         <div class="hero-content">
             <h1>Sathya Sankaran</h1>
-            <p class="tagline">Transforming cities through technology, data, and citizen action</p>
-            <p class="subtitle">Three decades of proving that determined people can change complex systems—from mobility platforms to policy reforms, from grassroots movements to boardroom strategies.</p>
+            <p class="tagline">Know, Think, Build, Change</p>
         </div>
         <div class="scroll-indicator">↓</div>
     </section>
@@ -331,6 +414,27 @@
             <h2>Impact & Work</h2>
             <div class="impact-grid">
                 <div class="impact-card">
+                    <img src="oorulabs-logo.jpg" alt="OoruLabs Podcast" class="impact-logo">
+                    <h3>OoruLabs Podcast</h3>
+                    <p>India's premiere urban affairs podcast exploring cities, governance, infrastructure, and civic engagement through in-depth conversations.</p>
+                    <a href="https://podcast.oorulabs.com" target="_blank">Listen Now →</a>
+                </div>
+
+                <div class="impact-card">
+                    <img src="btb-logo.png" alt="Break the Block" class="impact-logo">
+                    <h3>Break the Block</h3>
+                    <p>Field guide chronicling a decade-long citizen campaign that brought commuter rail to Bengaluru. 90 lessons for change-makers.</p>
+                    <a href="https://www.breaktheblock.in" target="_blank">Read the Book →</a>
+                </div>
+
+                <div class="impact-card">
+                    <img src="medium-logo.jpg" alt="Opinion Pieces" class="impact-logo">
+                    <h3>Opinion Pieces</h3>
+                    <p>Essays and reflections on urban policy, civic action, and systemic change. Sharing insights from the intersection of technology and governance.</p>
+                    <a href="https://medium.com/@sathya-sankaran" target="_blank">Read Articles →</a>
+                </div>
+
+                <div class="impact-card">
                     <img src="altmo-black.png" alt="AltMo" class="impact-logo">
                     <h3>AltMo</h3>
                     <p>Gamified mobility intelligence platform driving 342% increase in cycling infrastructure allocation and helping cities become climate-friendly.</p>
@@ -342,20 +446,6 @@
                     <h3>Relief Riders</h3>
                     <p>COVID pandemic initiative that spread across 12 cities with 600+ volunteers, winning UN World Bicycle Day Award and Nobel Peace Prize nomination.</p>
                     <a href="#relief-riders">Learn More →</a>
-                </div>
-
-                <div class="impact-card">
-                    <img src="btb-logo.png" alt="Break the Block" class="impact-logo">
-                    <h3>Break the Block</h3>
-                    <p>Field guide chronicling a decade-long citizen campaign that brought commuter rail to Bengaluru. 90 lessons for change-makers.</p>
-                    <a href="https://www.breaktheblock.in" target="_blank">Read the Book →</a>
-                </div>
-
-                <div class="impact-card">
-                    <img src="oorulabs-logo.jpg" alt="OoruLabs Podcast" class="impact-logo">
-                    <h3>OoruLabs Podcast</h3>
-                    <p>India's premiere urban affairs podcast exploring cities, governance, infrastructure, and civic engagement through in-depth conversations.</p>
-                    <a href="https://podcast.oorulabs.com" target="_blank">Listen Now →</a>
                 </div>
             </div>
         </div>
@@ -373,6 +463,11 @@
                 <a href="https://www.linkedin.com/in/sathyasankaran" target="_blank" aria-label="LinkedIn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/picanator" target="_blank" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                     </svg>
                 </a>
                 <a href="https://www.facebook.com/sathyasankaran" target="_blank" aria-label="Facebook">
@@ -403,8 +498,6 @@
                 </a>
                 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">CC-BY-NC-SA 4.0 license</a>
             </div>
-
-            <p class="footer-text">© 2026 Sathya Sankaran</p>
         </div>
     </footer>
 </body>
