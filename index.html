@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathya Sankaran - Urban Technologist & Change-Maker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #3d7a4f 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(74, 157, 78, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(44, 95, 45, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            opacity: 0.95;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            opacity: 0.85;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-image-wrapper {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #1a472a;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            background: white;
+        }
+
+        .impact-section h2 {
+            font-size: 2.5rem;
+            color: #1a472a;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .impact-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid #f0f0f0;
+            text-align: center;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            border-color: #4a9d4e;
+        }
+
+        .impact-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .impact-card h3 {
+            font-size: 1.5rem;
+            color: #1a472a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .impact-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .impact-card a {
+            display: inline-block;
+            color: #4a9d4e;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #4a9d4e;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .impact-card a:hover {
+            background: #4a9d4e;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a472a;
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .cc-license {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cc-license img {
+            height: 31px;
+            width: auto;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-text a {
+            color: #4a9d4e;
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-image-wrapper {
+                position: relative;
+                top: 0;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sathya Sankaran</h1>
+            <p class="tagline">Transforming cities through technology, data, and citizen action</p>
+            <p class="subtitle">Three decades of proving that determined people can change complex systems—from mobility platforms to policy reforms, from grassroots movements to boardroom strategies.</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="profile-image-wrapper">
+                    <img src="mugshot.jpeg" alt="Sathya Sankaran" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <h2>About Sathya</h2>
+                    <p>Sathya is a Computer Science graduate with a postgraduate degree in Public Policy. He brings three decades of experience in using technology and data to solve urban issues in mobility and energy.</p>
+                    
+                    <p>He is the architect of <strong>AltMo</strong>, a gamified mobility intelligence platform for the future of climate-friendly cities. The data from this platform enabled a 342% increased allocation in the Comprehensive Master Plan for cycling and walking, helped establish more than 20 kms of cycle tracks in Bengaluru, and won Silvassa Smart City an award for Excellence in Innovation. It is now helping corporates meet their ESG goals.</p>
+                    
+                    <p>His <strong>Relief Riders</strong> initiative during the COVID pandemic won the 2021 UN World Bicycle Day Special Award and was nominated for the 2022 Nobel Peace Prize.</p>
+                    
+                    <p>He is the author of the book <strong>Break the Block: Lessons from Bengaluru's Rail Battle</strong> and the host of <strong>OoruLabs podcast</strong>, India's premiere urban affairs podcast.</p>
+                    
+                    <p>Currently, Sathya serves as the strategy lead delivering thesis-based investing for urban sustainability, waste, energy and materials at Rainmatter Foundation. He is the CEO at WattsNext Energy, which is redefining the way power is delivered for vehicles and built forms. He is an adjunct faculty teaching Urban Governance and public problem solving for masters students in public policy at Kautilya School, Hyderabad and Mount Carmel, Bengaluru. He is a Director at the waste management startup, Bioman and the Bicycle Mayor of Bengaluru.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <h2>Impact & Work</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <img src="altmo-black.png" alt="AltMo" class="impact-logo">
+                    <h3>AltMo</h3>
+                    <p>Gamified mobility intelligence platform driving 342% increase in cycling infrastructure allocation and helping cities become climate-friendly.</p>
+                    <a href="https://www.altmo.app" target="_blank">Visit AltMo →</a>
+                </div>
+
+                <div class="impact-card">
+                    <img src="relief-riders-logo.png" alt="Relief Riders" class="impact-logo">
+                    <h3>Relief Riders</h3>
+                    <p>COVID pandemic initiative that spread across 12 cities with 600+ volunteers, winning UN World Bicycle Day Award and Nobel Peace Prize nomination.</p>
+                    <a href="#relief-riders">Learn More →</a>
+                </div>
+
+                <div class="impact-card">
+                    <img src="btb-logo.png" alt="Break the Block" class="impact-logo">
+                    <h3>Break the Block</h3>
+                    <p>Field guide chronicling a decade-long citizen campaign that brought commuter rail to Bengaluru. 90 lessons for change-makers.</p>
+                    <a href="https://www.breaktheblock.in" target="_blank">Read the Book →</a>
+                </div>
+
+                <div class="impact-card">
+                    <img src="oorulabs-logo.jpg" alt="OoruLabs Podcast" class="impact-logo">
+                    <h3>OoruLabs Podcast</h3>
+                    <p>India's premiere urban affairs podcast exploring cities, governance, infrastructure, and civic engagement through in-depth conversations.</p>
+                    <a href="https://podcast.oorulabs.com" target="_blank">Listen Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://twitter.com/sathyasankaran" target="_blank" aria-label="Twitter">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/sathyasankaran" target="_blank" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/sathyasankaran" target="_blank" aria-label="Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="https://medium.com/@sathya-sankaran" target="_blank" aria-label="Medium">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="cc-license">
+                <span>All content on this site is covered under</span>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
+                </a>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY">
+                </a>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC">
+                </a>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA">
+                </a>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">CC-BY-NC-SA 4.0 license</a>
+            </div>
+
+            <p class="footer-text">© 2026 Sathya Sankaran</p>
+        </div>
+    </footer>
+</body>
+</html>
