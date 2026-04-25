@@ -41,7 +41,9 @@
         "https://www.linkedin.com/in/sathyasankaran",
         "https://www.instagram.com/picanator",
         "https://medium.com/@sathya-sankaran",
-        "https://www.facebook.com/sathya.sankaran"
+        "https://www.facebook.com/sathya.sankaran",
+        "https://github.com/urbanmorph",
+        "https://mdshare.live"
       ],
       "jobTitle": [
         "CEO",
@@ -333,17 +335,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
-        }
-
-        .impact-card:nth-child(4),
-        .impact-card:nth-child(5) {
-            grid-column: span 1;
-        }
-
-        /* Center the last row with 2 items */
-        .impact-grid::after {
-            content: '';
-            grid-column: 3;
         }
 
         .impact-card {
@@ -670,10 +661,6 @@
             .impact-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .impact-grid::after {
-                display: none;
-            }
         }
 
         @media (max-width: 768px) {
@@ -792,6 +779,18 @@
                     <h3>Relief Riders</h3>
                     <p>COVID pandemic initiative that spread across 12 cities with 600+ volunteers, winning UN World Bicycle Day Award and Nobel Peace Prize nomination for community-led crisis response.</p>
                     <a href="https://www.cfam.in/reliefriders.html" target="_blank" rel="noopener">Learn More →</a>
+                </article>
+
+                <article class="impact-card">
+                    <svg class="impact-logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="mdshare logo">
+                        <rect width="200" height="80" rx="12" fill="#0a0a0a"/>
+                        <text x="100" y="52" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800" letter-spacing="-1">
+                            <tspan fill="#ffffff">md</tspan><tspan fill="#818cf8">share</tspan>
+                        </text>
+                    </svg>
+                    <h3>mdshare</h3>
+                    <p>Free, no-login markdown sharing — paste a doc, get a shareable link. Ships with an MCP server so AI clients (Claude, ChatGPT, Cursor, and more) can upload and edit docs directly. Open source.</p>
+                    <a href="https://mdshare.live" target="_blank" rel="noopener">Try mdshare →</a>
                 </article>
             </div>
         </div>
