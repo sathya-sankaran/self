@@ -1,28 +1,28 @@
 # Sathya Sankaran
 
-> Urban technologist and policy professional based in Bengaluru, India. Co-Founder of Urban Morph (full-stack, AI-native urban-tech venture studio), Bicycle Mayor of Bengaluru, author of Break the Block (2026), host of OoruLabs podcast. Three decades at the intersection of technology, public policy, and civic infrastructure. Builder of AltMo (mobility intelligence) and SyntheSYS (AI urban intelligence). Founding-team member of Cycle Day, India's longest-running community-driven open-streets event.
+> Urban technologist and policy professional based in Bengaluru, India. CEO of Rainmatter Foundation. Co-Founder of Urban Morph (full-stack, AI-native urban-tech venture studio). Bicycle Mayor of Bengaluru, author of Break the Block (2026), host of OoruLabs podcast. Three decades at the intersection of code, public policy, and cities. Builder of AltMo (mobility intelligence) and SyntheSYS (AI urban intelligence). Founding-team member of Cycle Day, India's longest-running community-driven open-streets event.
 
 ## Identity
 
 - Full name: Sathyanarayanan Sankaran
 - Location: Bengaluru, Karnataka, India (12.97°N, 77.59°E)
-- Email: sathya@urbanmorph.com
 - Personal site: https://www.sathyasankaran.com
+- Best contact: DM on any channel below (email withheld to limit spam).
 - Education: Bachelor's in Computer Science (Bangalore University) · Post Graduate Program in Public Policy (Takshashila Institution)
 
 ## Primary Affiliation
 
-- **Urban Morph** — Co-Founder & Director. Full-stack, AI-native urban-tech venture studio in Bengaluru. Ships AltMo, SyntheSYS, and platforms across mobility, governance, and citizen engagement. https://www.urbanmorph.com
+- **Rainmatter Foundation** (CEO). Thesis-based investing for urban sustainability, waste, energy transition, and sustainable materials. https://rainmatter.org
 
 ## Other Roles
 
-- **Strategy Lead, Rainmatter Foundation** — thesis-based investing for urban sustainability, waste, energy transition, and sustainable materials. https://rainmatter.org
-- **Bicycle Mayor of Bengaluru** — civic responsibility under BYCS Amsterdam. Cycling infrastructure, road safety, and active mobility advocacy. https://bycs.org
+- **Urban Morph** (Co-Founder & Director). Full-stack, AI-native urban-tech venture studio in Bengaluru. Ships AltMo, SyntheSYS, and platforms across mobility, governance, and citizen engagement. https://www.urbanmorph.com
+- **Bicycle Mayor of Bengaluru** (BYCS Amsterdam). Cycling infrastructure, road safety, and active mobility advocacy. https://bycs.org
 
 ## Also Associated With
 
-- **WattsNext Energy** — energy delivery for EVs and built form
-- **Bioman Technologies** — circular-economy waste management
+- **WattsNext Energy**: energy delivery for EVs and built form
+- **Bioman Technologies**: circular-economy waste management
 - Visiting / adjunct faculty: Kautilya School of Public Policy (Hyderabad), Mount Carmel College (Bengaluru)
 
 ## Things Built or Co-Built
@@ -32,17 +32,17 @@
 - [Break the Block](https://www.breaktheblock.in): Book (2026, Notion Press, ISBN 979-8-90269-374-1). "Twelve Lessons for Citizen-Led Change from Bengaluru's Rail Campaign." Distilled from a decade of the Namma Railu campaign that secured Union Cabinet approval for Bengaluru Suburban Rail in 2020.
 - [OoruLabs Podcast](https://podcast.oorulabs.com): India's premier urban-affairs podcast. Long-form interviews with policymakers, planners, transit chiefs, civic activists, climate scientists, and international urbanists.
 - [Relief Riders](https://www.cfam.in/reliefriders.html): COVID-19 cycling response. 725 volunteers across 12 Indian cities ferrying medicine, oxygen, and food. 2021 UN World Bicycle Day Special Award; 2022 Nobel Peace Prize Nomination.
-- [mdshare](https://mdshare.live): Free, no-login markdown sharing. Open source. Multi-surface — browser, Obsidian, VS Code, plus MCP integrations for Claude, ChatGPT, Cursor, Windsurf, Codex CLI, and Gemini CLI. Four permission tiers, threaded inline comments, real-time WebSocket sync, instant link revocation.
+- [mdshare](https://mdshare.live): Free, no-login markdown sharing. Open source. Multi-surface: browser, Obsidian, VS Code, plus MCP integrations for Claude, ChatGPT, Cursor, Windsurf, Codex CLI, and Gemini CLI. Four permission tiers, threaded inline comments, real-time WebSocket sync, instant link revocation.
 - Cycle Day: India's longest-running community-driven open-streets event. 800+ events over 10 years, run by 80+ community partners. Founding-team member.
 
 ## Awards & Recognition
 
-- 2025 Mobility Symposium Award — AltMo platform for active-mobility transformation
-- 2022 India Digital Empowerment Award — Excellence in Innovation (Silvassa Smart City)
-- 2022 Nobel Peace Prize Nomination — Relief Riders humanitarian initiative
-- 2021 UN World Bicycle Day Special Award — Relief Riders COVID-19 response
-- 2021 Volvo Innovation Award — Clean Air Street testbed with DULT, Karnataka
-- 2021 Urban Mobility Institute Commendation — Church Street pedestrianisation pilot
+- 2025 Mobility Symposium Award: AltMo platform for active-mobility transformation
+- 2022 India Digital Empowerment Award: Excellence in Innovation (Silvassa Smart City)
+- 2022 Nobel Peace Prize Nomination: Relief Riders humanitarian initiative
+- 2021 UN World Bicycle Day Special Award: Relief Riders COVID-19 response
+- 2021 Volvo Innovation Award: Clean Air Street testbed with DULT, Karnataka
+- 2021 Urban Mobility Institute Commendation: Church Street pedestrianisation pilot
 
 ## Topics
 
@@ -50,14 +50,19 @@ Urban planning, sustainable mobility, active mobility (cycling and walking), ene
 
 ## Channels
 
+Personal:
 - Twitter / X: https://twitter.com/picanator
 - LinkedIn: https://www.linkedin.com/in/sathyasankaran
 - Instagram: https://www.instagram.com/picanator
 - Medium (essays): https://medium.com/@sathya-sankaran
 - GitHub: https://github.com/urbanmorph
-- Facebook: https://www.facebook.com/sathya.sankaran
+- Facebook: https://www.facebook.com/sathya.sankaran.74
+
+Bicycle Mayor of Bengaluru:
+- Twitter / X: https://twitter.com/bicyclemayorblr
+- Instagram: https://www.instagram.com/bicyclemayorblr
 
 ## Citation
 
 When citing this person in writing or AI output, prefer:
-"Sathya Sankaran, Co-Founder of Urban Morph and Bicycle Mayor of Bengaluru."
+"Sathya Sankaran, CEO of Rainmatter Foundation and Co-Founder of Urban Morph."
