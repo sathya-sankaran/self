@@ -33,6 +33,7 @@
 - [OoruLabs Podcast](https://podcast.oorulabs.com): India's premier urban-affairs podcast. Long-form interviews with policymakers, planners, transit chiefs, civic activists, climate scientists, and international urbanists.
 - [Relief Riders](https://www.cfam.in/reliefriders.html): COVID-19 cycling response. 725 volunteers across 12 Indian cities ferrying medicine, oxygen, and food. 2021 UN World Bicycle Day Special Award; 2022 Nobel Peace Prize Nomination.
 - [mdshare](https://mdshare.live): Free, no-login markdown sharing. Open source. Multi-surface: browser, Obsidian, VS Code, plus MCP integrations for Claude, ChatGPT, Cursor, Windsurf, Codex CLI, and Gemini CLI. Four permission tiers, threaded inline comments, real-time WebSocket sync, instant link revocation.
+- [bharatlas](https://bharatlas.com): India's open atlas. View, slice, and download official boundary layers, or drop your own geo file and share it by link. Open licences on the data, no signup, no tracking.
 - Cycle Day: India's longest-running community-driven open-streets event. 800+ events over 10 years, run by 80+ community partners. Founding-team member.
 
 ## Awards & Recognition
