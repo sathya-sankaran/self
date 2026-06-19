@@ -600,6 +600,24 @@
         .card.span-7 { grid-column: span 7; }
         .card.span-12 { grid-column: span 12; }
 
+        /* ------------ Figure marks + ISOTYPE units ------------ */
+        .ic-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+        .figmark {
+            width: 15px; height: 15px; flex: none;
+            fill: none; stroke: var(--muted); stroke-width: 1.5;
+            stroke-linecap: round; stroke-linejoin: round;
+            vertical-align: -3px; margin-right: 9px;
+            transition: stroke 0.2s;
+        }
+        .card:hover .figmark { stroke: var(--accent); }
+        .iso { display: flex; gap: 3px; margin: 8px 0 0; }
+        .iso i { display: block; background: var(--accent); }
+        .iso.dots { align-items: center; }
+        .iso.dots i { width: 5px; height: 5px; border-radius: 50%; }
+        .iso.bars { align-items: flex-end; height: 20px; }
+        .iso.bars i { width: 6px; height: 100%; }
+        .iso-cap { margin-top: 8px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
         /* ------------ Affiliations table ------------ */
         .affil-table {
             width: 100%;
@@ -908,6 +926,16 @@
     </style>
 </head>
 <body>
+    <svg class="ic-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="ic-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-7h6l-4 7"/><path d="M16 9l2 7"/><path d="M9 9h3"/></symbol>
+      <symbol id="ic-nodes" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="12" cy="17" r="2"/><path d="M7.7 8l3 7M16.3 9l-3 6.5M8 7.3l8 .8"/></symbol>
+      <symbol id="ic-relief" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></symbol>
+      <symbol id="ic-book" viewBox="0 0 24 24"><path d="M12 7C9.5 5.7 6 5.7 4 6.5v12c2-.8 5.5-.8 8 .5"/><path d="M12 7c2.5-1.3 6-1.3 8-.5v12c-2-.8-5.5-.8-8 .5"/><path d="M12 7v12"/></symbol>
+      <symbol id="ic-wave" viewBox="0 0 24 24"><path d="M4 11v2M8 8v8M12 5v14M16 9v6M20 10v4"/></symbol>
+      <symbol id="ic-doc" viewBox="0 0 24 24"><path d="M7 4h8l4 4v12H7z"/><path d="M15 4v4h4"/><path d="M11 11v5M9 14l2 2 2-2"/></symbol>
+      <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="ic-fork" viewBox="0 0 24 24"><path d="M12 21v-7M12 14L6.5 7M12 14l5.5-7"/><circle cx="6" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="12" cy="21" r="1.6"/></symbol>
+    </svg>
     <div class="page">
 
         <!-- TOPBAR -->
@@ -998,23 +1026,26 @@
 
                 <article class="card feature">
                     <div class="fignum">
-                        <span>FIG. 02 / PLATFORM</span>
+                        <span><svg class="figmark"><use href="#ic-bike"/></svg>FIG. 02 / PLATFORM</span>
                         <span class="tag">AT URBAN MORPH</span>
                     </div>
                     <h3>AltMo</h3>
                     <div class="bignum">500<span class="unit">+ t</span></div>
+                    <div class="iso bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="iso-cap">each bar = 100 t CO₂ avoided</div>
                     <p>GPS-verified mobility intelligence, double-booked: tonnes of CO₂ avoided for ESG and city-planning ledgers, active minutes for employee wellness. Challenges, leaderboards, and city analytics on top.</p>
                     <div class="subnums">
-                        <div><b>9,000+</b>users</div>
-                        <div><b>100+</b>cities</div>
-                        <div><b>900+</b>organisations</div>
+                        <div><b>9,000+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>users</div>
+                        <div><b>100+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>cities</div>
+                        <div><b>900+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>organisations</div>
+                        <div class="iso-cap" style="grid-column:1/-1">● scaled: users ×1k · cities ×10 · orgs ×100</div>
                     </div>
                     <a href="https://www.altmo.app" class="visit" target="_blank" rel="noopener">altmo.app</a>
                 </article>
 
                 <article class="card span-5">
                     <div class="fignum">
-                        <span>FIG. 03 / AI PLATFORM</span>
+                        <span><svg class="figmark"><use href="#ic-nodes"/></svg>FIG. 03 / AI PLATFORM</span>
                         <span class="tag">AT URBAN MORPH · AI-NATIVE</span>
                     </div>
                     <h3>SyntheSYS</h3>
@@ -1024,7 +1055,7 @@
 
                 <article class="card span-5">
                     <div class="fignum">
-                        <span>FIG. 04 / INITIATIVE</span>
+                        <span><svg class="figmark"><use href="#ic-relief"/></svg>FIG. 04 / INITIATIVE</span>
                         <span class="tag">UN AWARD · NOBEL NOM.</span>
                     </div>
                     <h3>Relief Riders</h3>
@@ -1035,7 +1066,7 @@
 
                 <article class="card span-7">
                     <div class="fignum">
-                        <span>FIG. 05 / BOOK</span>
+                        <span><svg class="figmark"><use href="#ic-book"/></svg>FIG. 05 / BOOK</span>
                         <span class="tag">2026 · NAMMA RAILU</span>
                     </div>
                     <h3>Break the Block</h3>
@@ -1046,7 +1077,7 @@
 
                 <article class="card span-12">
                     <div class="fignum">
-                        <span>FIG. 06 / PODCAST</span>
+                        <span><svg class="figmark"><use href="#ic-wave"/></svg>FIG. 06 / PODCAST</span>
                         <span class="tag">ONGOING SINCE 2021</span>
                     </div>
                     <h3>OoruLabs</h3>
@@ -1056,7 +1087,7 @@
 
                 <article class="card span-4">
                     <div class="fignum">
-                        <span>FIG. 07 / TOOL</span>
+                        <span><svg class="figmark"><use href="#ic-doc"/></svg>FIG. 07 / TOOL</span>
                         <span class="tag">OPEN SOURCE</span>
                     </div>
                     <h3>mdshare</h3>
@@ -1066,7 +1097,7 @@
 
                 <article class="card span-4">
                     <div class="fignum">
-                        <span>FIG. 08 / TOOL</span>
+                        <span><svg class="figmark"><use href="#ic-pin"/></svg>FIG. 08 / TOOL</span>
                         <span class="tag">OPEN ATLAS &middot; NO SIGNUP</span>
                     </div>
                     <h3>bharatlas</h3>
@@ -1076,7 +1107,7 @@
 
                 <article class="card span-4">
                     <div class="fignum">
-                        <span>FIG. 09 / TOOL</span>
+                        <span><svg class="figmark"><use href="#ic-fork"/></svg>FIG. 09 / TOOL</span>
                         <span class="tag">MIT &middot; NO LOGIN</span>
                     </div>
                     <h3>Irrational</h3>
