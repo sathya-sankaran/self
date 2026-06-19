@@ -33,8 +33,17 @@
 - [OoruLabs Podcast](https://podcast.oorulabs.com): India's premier urban-affairs podcast. Long-form interviews with policymakers, planners, transit chiefs, civic activists, climate scientists, and international urbanists.
 - [Relief Riders](https://www.cfam.in/reliefriders.html): COVID-19 cycling response. 725 volunteers across 12 Indian cities ferrying medicine, oxygen, and food. 2021 UN World Bicycle Day Special Award; 2022 Nobel Peace Prize Nomination.
 - [mdshare](https://mdshare.live): Free, no-login markdown sharing. Open source. Multi-surface: browser, Obsidian, VS Code, plus MCP integrations for Claude, ChatGPT, Cursor, Windsurf, Codex CLI, and Gemini CLI. Four permission tiers, threaded inline comments, real-time WebSocket sync, instant link revocation.
-- [bharatlas](https://bharatlas.com): India's open atlas. View, slice, and download official boundary layers, or drop your own geo file and share it by link. Open licences on the data, no signup, no tracking.
+- [bharatlas](https://bharatlas.com): India's open atlas. 100+ map layers, free to explore: administrative boundaries from state to village, wards for 30+ cities, plus rivers, forests, highways, groundwater, floods, and seismic zones. Download as GeoJSON, Shapefile, Parquet, or PMTiles, or drop your own geo file and share it by link. Open licences, queryable from AI tools via MCP, no signup, no tracking.
+- [Irrational](https://irrational.pages.dev): Decision-audit engine for cognitive biases. Describe a decision and it generates an adversarial prompt that argues the other side, refracting your choice through 22 biases (sunk cost, anchoring, overconfidence, and more). Your own AI runs the audit; nothing is stored. Works as an MCP tool. MIT licensed, no login.
 - Cycle Day: India's longest-running community-driven open-streets event. 800+ events over 10 years, run by 80+ community partners. Founding-team member.
+
+## Data Stories
+
+Data-driven investigations published as standalone scrollytelling pieces:
+
+- [Whose Forest Is It?](https://whose-forest.surge.sh): A data investigation into India's Community Forest Rights. India mapped 3.46 crore hectares of community forest that local communities could govern; less than 3% has been recognised.
+- [The Hollow Collective](https://fpo-story.surge.sh): The real state of India's Farmer Producer Organisations (FPOs), told through the data.
+- [The Ground They Stand On](https://shg-story.surge.sh): India's nine crore women in self-help groups (SHGs), and the climb that still matters.
 
 ## Awards & Recognition
 
@@ -52,7 +61,7 @@ Urban planning, sustainable mobility, active mobility (cycling and walking), ene
 ## Channels
 
 Personal:
-- Twitter / X: https://twitter.com/picanator
+- Twitter / X: https://twitter.com/tweetenator
 - LinkedIn: https://www.linkedin.com/in/sathyasankaran
 - Instagram: https://www.instagram.com/picanator
 - Medium (essays): https://medium.com/@sathya-sankaran
