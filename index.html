@@ -648,6 +648,63 @@
             letter-spacing: 0.04em;
         }
 
+        /* ------------ Stories index ------------ */
+        .stories { border-top: 1px solid var(--ink); }
+        .story {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 32px;
+            padding: 26px 16px;
+            border-bottom: 1px solid var(--rule);
+            text-decoration: none;
+            color: var(--ink);
+            transition: background 0.15s;
+        }
+        .story:hover { background: var(--paper-2); }
+        .story-main { display: flex; flex-direction: column; }
+        .story-kicker {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .story-title {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.12;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+        .story:hover .story-title { color: var(--accent); }
+        .story-dek {
+            font-size: 15px;
+            line-height: 1.55;
+            color: var(--ink-2);
+            max-width: 64ch;
+        }
+        .story-link {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            white-space: nowrap;
+            align-self: center;
+        }
+        .story-link::after {
+            content: ' ↗';
+            color: var(--accent);
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .story:hover .story-link { color: var(--ink); }
+        .story:hover .story-link::after { transform: translate(2px, -2px); }
+
         /* ------------ Plate (contact sheet) ------------ */
         .plate-grid {
             display: grid;
@@ -783,6 +840,8 @@
             .affil-table tbody tr { display: block; padding: 22px 0; border-bottom: 1px solid var(--rule); }
             .affil-table .org { width: auto; font-size: 1.2rem; }
             .affil-table .role { width: auto; }
+            .story { grid-template-columns: 1fr; gap: 14px; padding: 22px 0; }
+            .story-link { align-self: start; }
             .plate-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-grid { grid-template-columns: 1fr; gap: 48px; }
             .channels li { grid-template-columns: 90px 1fr; }
@@ -856,8 +915,9 @@
             <nav>
                 <a href="#about">§01 About</a>
                 <a href="#impact">§02 Impact</a>
-                <a href="#affiliations">§03 Affiliations</a>
-                <a href="#contact">§04 Contact</a>
+                <a href="#stories">§03 Stories</a>
+                <a href="#affiliations">§04 Affiliations</a>
+                <a href="#contact">§05 Contact</a>
             </nav>
         </header>
 
@@ -929,7 +989,7 @@
         <section id="impact" class="block">
             <div class="section-head">
                 <span class="label"><span class="num">§02</span> IMPACT / SELECTED WORKS</span>
-                <h2>Six artefacts: <em>two AI-native platforms</em>, an initiative, a book, a podcast, a tool.</h2>
+                <h2>Eight artefacts: <em>two AI-native platforms</em>, an initiative, a book, a podcast, three open tools.</h2>
             </div>
 
             <div class="impact-grid">
@@ -1025,10 +1085,45 @@
             </div>
         </section>
 
+        <!-- STORIES -->
+        <section id="stories" class="block">
+            <div class="section-head">
+                <span class="label"><span class="num">§03</span> STORIES / INVESTIGATIONS</span>
+                <h2>Data-driven investigations into how India actually works: <em>forests, farmers, livelihoods, rights.</em></h2>
+            </div>
+
+            <div class="stories">
+                <a class="story" href="https://whose-forest.surge.sh" target="_blank" rel="noopener">
+                    <div class="story-main">
+                        <span class="story-kicker">Forests · CFR Rights · 2026</span>
+                        <span class="story-title">Whose Forest Is It?</span>
+                        <span class="story-dek">India mapped 3.46 crore hectares of community forest that local communities could govern. Less than 3% has been recognised.</span>
+                    </div>
+                    <span class="story-link">whose-forest.surge.sh</span>
+                </a>
+                <a class="story" href="https://fpo-story.surge.sh" target="_blank" rel="noopener">
+                    <div class="story-main">
+                        <span class="story-kicker">Agriculture · FPOs</span>
+                        <span class="story-title">The Hollow Collective</span>
+                        <span class="story-dek">The real state of India's farmer producer companies, told through the data.</span>
+                    </div>
+                    <span class="story-link">fpo-story.surge.sh</span>
+                </a>
+                <a class="story" href="https://shg-story.surge.sh" target="_blank" rel="noopener">
+                    <div class="story-main">
+                        <span class="story-kicker">Livelihoods · Women · SHGs</span>
+                        <span class="story-title">The Ground They Stand On</span>
+                        <span class="story-dek">India's nine crore women in self-help groups, and the climb that still matters.</span>
+                    </div>
+                    <span class="story-link">shg-story.surge.sh</span>
+                </a>
+            </div>
+        </section>
+
         <!-- AFFILIATIONS -->
         <section id="affiliations" class="block">
             <div class="section-head">
-                <span class="label"><span class="num">§03</span> AFFILIATIONS / ROSTER</span>
+                <span class="label"><span class="num">§04</span> AFFILIATIONS / ROSTER</span>
                 <h2>Where the time goes: <em>concurrent</em>, not chronological.</h2>
             </div>
 
@@ -1087,7 +1182,7 @@
         <!-- CONTACT -->
         <section id="contact" class="block" style="border-bottom: 0;">
             <div class="section-head">
-                <span class="label"><span class="num">§04</span> CONTACT / CHANNELS</span>
+                <span class="label"><span class="num">§05</span> CONTACT / CHANNELS</span>
                 <h2>Open to collaboration on cities, mobility, climate, and the messy middle.</h2>
             </div>
 
