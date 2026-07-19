@@ -368,37 +368,17 @@
             font-weight: 400;
         }
 
-        .hero .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border-top: 1px solid var(--rule);
-            margin-top: 48px;
-        }
-        .hero .stat {
-            padding: 24px 24px 24px 0;
-            border-right: 1px solid var(--rule);
-        }
-        .hero .stat:last-child { border-right: 0; padding-right: 0; }
-        .hero .stat:not(:first-child) { padding-left: 24px; }
-        .hero .stat .num {
-            font-family: var(--mono);
-            font-weight: 700;
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            color: var(--ink);
-            letter-spacing: -0.02em;
-            display: block;
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-        .hero .stat .num .unit { color: var(--accent); }
-        .hero .stat .label {
-            font-family: var(--mono);
-            font-size: 10.5px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--muted);
-            line-height: 1.5;
-        }
+        /* ------------ Dispatch hooks (hero) ------------ */
+        .hooks { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--ink); margin-top: 44px; }
+        .hook { display: flex; flex-direction: column; gap: 12px; padding: 24px 22px 26px; border-right: 1px solid var(--rule); text-decoration: none; color: var(--ink); transition: background 0.18s ease; }
+        .hook:last-child { border-right: 0; }
+        .hook:hover { background: var(--paper-2); }
+        .hook .h-title { font-family: var(--sans); font-weight: 600; font-size: 1.14rem; letter-spacing: -0.015em; line-height: 1.15; color: var(--ink); display: flex; justify-content: space-between; align-items: baseline; gap: 10px; transition: color 0.18s ease; }
+        .hook .h-title::after { content: '→'; color: var(--accent); font-family: var(--mono); transition: transform 0.2s; }
+        .hook:hover .h-title { color: var(--accent); }
+        .hook:hover .h-title::after { transform: translateX(3px); }
+        .hook .h-teaser { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); }
+        .hook .h-teaser b { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
 
         /* ------------ Section chrome ------------ */
         section.block {
@@ -842,10 +822,9 @@
         @media (max-width: 980px) {
             .page { padding: 0 20px; }
             .topbar nav { display: none; }
-            .hero .stats { grid-template-columns: repeat(2, 1fr); }
-            .hero .stat:nth-child(2) { border-right: 0; padding-right: 0; }
-            .hero .stat:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); margin-top: -1px; }
-            .hero .stat:nth-child(3), .hero .stat:nth-child(4) { padding-top: 24px; }
+            .hooks { grid-template-columns: 1fr 1fr; }
+            .hook:nth-child(2) { border-right: 0; }
+            .hook:nth-child(1), .hook:nth-child(2) { border-bottom: 1px solid var(--rule); }
             .section-head { grid-template-columns: 1fr; gap: 12px; }
             .about-grid { grid-template-columns: 1fr; gap: 32px; }
             .portrait { position: relative; top: 0; max-width: 220px; }
@@ -878,9 +857,9 @@
             .hero .meta-strip { grid-template-columns: 1fr; gap: 8px; margin-bottom: 40px; }
             .hero .meta-strip .rule { display: none; }
             .hero .lead { margin-bottom: 36px; }
-            .hero .stats { grid-template-columns: 1fr; }
-            .hero .stat { padding: 20px 0 !important; border-right: 0 !important; border-left: 0 !important; border-bottom: 1px solid var(--rule); margin-top: 0 !important; }
-            .hero .stat:last-child { border-bottom: 0; }
+            .hooks { grid-template-columns: 1fr; }
+            .hook { border-right: 0; border-bottom: 1px solid var(--rule); }
+            .hook:last-child { border-bottom: 0; }
 
             /* Sections breathe less, cards eat less width on padding */
             section.block { padding: 64px 0; }
@@ -942,11 +921,12 @@
         <header class="topbar reveal r1">
             <span class="stamp">SS &nbsp;/&nbsp; FIELD NOTES &nbsp;/&nbsp; v.2026</span>
             <nav>
-                <a href="#about">§01 About</a>
-                <a href="#impact">§02 Impact</a>
-                <a href="#stories">§03 Stories</a>
-                <a href="#affiliations">§04 Affiliations</a>
-                <a href="#contact">§05 Contact</a>
+                <a href="#tools">§01 Tools</a>
+                <a href="#stories">§02 Stories</a>
+                <a href="#about">§03 About</a>
+                <a href="#work">§04 Work</a>
+                <a href="#affiliations">§05 Affiliations</a>
+                <a href="#contact">§06 Contact</a>
             </nav>
         </header>
 
@@ -974,120 +954,39 @@
                 social tech consulting by trade.
             </p>
 
+            <!-- Dispatch bar: descriptive door + preview of what's inside -->
+            <nav class="hooks reveal r4" aria-label="Jump to what you came for">
+                <a class="hook" href="#tools">
+                    <span class="h-title">Use something I built</span>
+                    <span class="h-teaser"><b>5</b> free, open-source tools: an India atlas, live air quality, a raga identifier, markdown sharing, and a bias auditor.</span>
+                </a>
+                <a class="hook" href="#stories">
+                    <span class="h-title">Read an investigation</span>
+                    <span class="h-teaser"><b>6</b> data stories on rural India: biodiversity registers, village sustainability, wildlife conflict, forest rights, farmer collectives, and women's SHGs.</span>
+                </a>
+                <a class="hook" href="#about">
+                    <span class="h-title">Know who this is</span>
+                    <span class="h-teaser">A short bio and current roles, then the platforms, book, and podcast behind them.</span>
+                </a>
+                <a class="hook" href="#contact">
+                    <span class="h-title">Work together</span>
+                    <span class="h-teaser">For talks, advisory, podcasts, and collaborations. A DM on any channel, replies usually same-week.</span>
+                </a>
+            </nav>
         </section>
 
-        <!-- ABOUT -->
-        <section id="about" class="block">
+        <!-- TOOLS -->
+        <section id="tools" class="block">
             <div class="section-head">
-                <span class="label"><span class="num">§01</span> ABOUT / SUBJECT</span>
-                <h2>Technology professional who took a <em>detour</em> through public policy, and never quite came back.</h2>
-            </div>
-
-            <div class="about-grid">
-                <figure class="portrait">
-                    <img src="mugshot.jpeg" alt="Sathya Sankaran, Urban Technologist and Bicycle Mayor of Bengaluru" loading="lazy">
-                    <figcaption class="caption"><span class="fig">FIG. 01</span> &nbsp; Sankaran, S. Primary subject. Bengaluru, IN.</figcaption>
-                </figure>
-
-                <div class="prose">
-                    <p>Three decades transforming cities through technology and data-driven solutions in <strong>sustainable mobility</strong> and <strong>energy transition</strong>. The unusual mix (a technology background plus a PG in Public Policy) is the whole point: most urban problems aren't blocked by ignorance, they're blocked by the gap between people who can read systems and people who can read the bylaw.</p>
-
-                    <h3>Stewarding at Rainmatter</h3>
-                    <p>Building on <strong>Rainmatter's</strong> zero-to-one journey to make it a key player in a sustainable future, for ourselves and the functional natural ecosystems we depend on. The shift: from resource-consuming places to <em>climate-conscious, participatory, resilient</em> ones.</p>
-
-                    <h3>Building at Urban Morph</h3>
-                    <p>Urban Morph is the venture studio I co-founded: full-stack, AI-native, Bengaluru-based. The two platforms with my hands deepest in them: <strong>AltMo</strong>, a gamified mobility intelligence platform whose data drove a <strong>342% increase</strong> in cycling &amp; walking allocation in Bengaluru's Master Plan, established 20+&nbsp;km of cycle tracks, and won Silvassa Smart City an Excellence in Innovation award; and <strong>SyntheSYS</strong>, a more recent AI-powered urban intelligence suite for understanding and actioning progress at scale, ward to nation. Currently shipping: dashboards for the <strong>Karnataka Digital Economy Mission</strong>, <strong>Neighbourhoods of the Future</strong> (<a href="https://notf.in" target="_blank" rel="noopener">notf.in</a>) for citizen-organised hyperlocal action, and digital information portals for a range of businesses and public-good initiatives.</p>
-
-                    <h3>Recognition &amp; Global Impact</h3>
-                    <p>The <strong>Relief Riders</strong> initiative during COVID-19 earned the <strong>2021 UN World Bicycle Day Special Award</strong> and a nomination for the <strong>2022 Nobel Peace Prize</strong>. The network spread across <strong>12 cities</strong> with <strong>725 volunteers</strong>, demonstrating community-led mobility at crisis scale.</p>
-
-                    <h3>Thought Leadership</h3>
-                    <p>Author of <strong>Break the Block: Twelve Lessons for Citizen-Led Change from Bengaluru's Rail Campaign</strong> (2026), a field guide drawn from the decade-long <strong>Namma Railu</strong> campaign that secured Union Cabinet approval for Bengaluru Suburban Rail in 2020. Host of <strong>OoruLabs</strong>, India's premier urban-affairs podcast: long conversations with the people who hold or move levers on cities, Indian and otherwise.</p>
-
-                    <h3>Currently</h3>
-                    <ul>
-                        <li><strong>CEO, Rainmatter Foundation.</strong> Thesis-based investing for urban sustainability, waste, energy transition, and sustainable materials.</li>
-                        <li><strong>Co-Founder, Urban Morph.</strong> Full-stack, AI-native urban-tech venture studio. Ships AltMo and SyntheSYS.</li>
-                        <li><strong>Bicycle Mayor of Bengaluru.</strong> Cycling infrastructure and sustainable mobility advocacy.</li>
-                    </ul>
-                    <p style="font-size: 14.5px; color: var(--muted);">Also associated with <strong style="color: var(--ink-2);">WattsNext Energy</strong>, <strong style="color: var(--ink-2);">Bioman Technologies</strong>, and as visiting/adjunct faculty at <strong style="color: var(--ink-2);">Kautilya School of Public Policy</strong> and <strong style="color: var(--ink-2);">Mount Carmel College</strong>.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- IMPACT -->
-        <section id="impact" class="block">
-            <div class="section-head">
-                <span class="label"><span class="num">§02</span> IMPACT / SELECTED WORKS</span>
-                <h2>Ten artefacts: <em>two AI-native platforms</em>, an initiative, a book, a podcast, five open tools.</h2>
+                <span class="label"><span class="num">§01</span> BUILT FOR THE PUBLIC</span>
+                <h2>Five things I built that you can use right now: <em>free, no login, open source.</em></h2>
             </div>
 
             <div class="impact-grid">
 
-                <article class="card feature">
-                    <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-bike"/></svg>FIG. 02 / PLATFORM</span>
-                        <span class="tag">AT URBAN MORPH</span>
-                    </div>
-                    <h3>AltMo</h3>
-                    <div class="bignum">500<span class="unit">+ t</span></div>
-                    <div class="iso bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="iso-cap">each bar = 100 t CO₂ avoided</div>
-                    <p>GPS-verified mobility intelligence, double-booked: tonnes of CO₂ avoided for ESG and city-planning ledgers, active minutes for employee wellness. Challenges, leaderboards, and city analytics on top.</p>
-                    <div class="subnums">
-                        <div><b>9,000+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>users</div>
-                        <div><b>100+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>cities</div>
-                        <div><b>900+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>organisations</div>
-                        <div class="iso-cap" style="grid-column:1/-1">● scaled: users ×1k · cities ×10 · orgs ×100</div>
-                    </div>
-                    <a href="https://www.altmo.app" class="visit" target="_blank" rel="noopener">altmo.app</a>
-                </article>
-
-                <article class="card span-5">
-                    <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-nodes"/></svg>FIG. 03 / AI PLATFORM</span>
-                        <span class="tag">AT URBAN MORPH · AI-NATIVE</span>
-                    </div>
-                    <h3>SyntheSYS</h3>
-                    <p>AI-powered urban intelligence for understanding and actioning progress at scale, ward to nation. Currently shipping: dashboards for the <strong>Karnataka Digital Economy Mission</strong>, <strong>Neighbourhoods of the Future</strong> (<a href="https://notf.in" target="_blank" rel="noopener">notf.in</a>) for citizen-organised hyperlocal action, and digital information portals for a range of businesses and public-good initiatives.</p>
-                    <a href="https://www.urbanmorph.com/synthesys.html" class="visit" target="_blank" rel="noopener">urbanmorph.com/synthesys</a>
-                </article>
-
-                <article class="card span-5">
-                    <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-relief"/></svg>FIG. 04 / INITIATIVE</span>
-                        <span class="tag">UN AWARD · NOBEL NOM.</span>
-                    </div>
-                    <h3>Relief Riders</h3>
-                    <div class="bignum" style="font-size: clamp(3rem, 6.5vw, 5rem); margin: 8px 0 20px;">725</div>
-                    <p>COVID-19 cycling response. Volunteers ferrying medicine, oxygen, food across 12 Indian cities. 2021 UN World Bicycle Day Special Award; 2022 Nobel Peace Prize nomination.</p>
-                    <a href="https://youtu.be/hXJ6El7VQWE?si=bky_nvR8UiP9Za1b" class="visit" target="_blank" rel="noopener">Watch the story</a>
-                </article>
-
-                <article class="card span-7">
-                    <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-book"/></svg>FIG. 05 / BOOK</span>
-                        <span class="tag">2026 · NAMMA RAILU</span>
-                    </div>
-                    <h3>Break the Block</h3>
-                    <div class="bignum" style="font-size: clamp(3rem, 6.5vw, 5rem); margin: 8px 0 20px;">12</div>
-                    <p>The brutally honest playbook for changing your city when you have no power, no money, and no political connections. Twelve lessons drawn from the decade-long <strong>Namma Railu</strong> campaign: five citizens, ten years, one Union Cabinet approval (2020) for Bengaluru Suburban Rail.</p>
-                    <a href="https://www.breaktheblock.in" class="visit" target="_blank" rel="noopener">breaktheblock.in</a>
-                </article>
-
-                <article class="card span-12">
-                    <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-wave"/></svg>FIG. 06 / PODCAST</span>
-                        <span class="tag">ONGOING SINCE 2021</span>
-                    </div>
-                    <h3>OoruLabs</h3>
-                    <p>India's premier urban-affairs podcast. Long conversations with the people who hold or move levers on cities: Indian transit chiefs, mayors, ward activists, climate scientists, and an Amsterdam Deputy Mayor or Dutch cycling envoy when the question calls for it.</p>
-                    <a href="https://podcast.oorulabs.com" class="visit" target="_blank" rel="noopener">podcast.oorulabs.com</a>
-                </article>
-
                 <article class="card span-6">
                     <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-doc"/></svg>FIG. 07 / TOOL</span>
+                        <span><svg class="figmark"><use href="#ic-doc"/></svg>FIG. 01 / TOOL</span>
                         <span class="tag">OPEN SOURCE</span>
                     </div>
                     <h3>mdshare</h3>
@@ -1097,7 +996,7 @@
 
                 <article class="card span-6">
                     <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-pin"/></svg>FIG. 08 / TOOL</span>
+                        <span><svg class="figmark"><use href="#ic-pin"/></svg>FIG. 02 / TOOL</span>
                         <span class="tag">OPEN ATLAS &middot; NO SIGNUP</span>
                     </div>
                     <h3>bharatlas</h3>
@@ -1107,7 +1006,7 @@
 
                 <article class="card span-4">
                     <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-fork"/></svg>FIG. 09 / TOOL</span>
+                        <span><svg class="figmark"><use href="#ic-fork"/></svg>FIG. 03 / TOOL</span>
                         <span class="tag">MIT &middot; NO LOGIN</span>
                     </div>
                     <h3>Irrational</h3>
@@ -1117,7 +1016,7 @@
 
                 <article class="card span-4">
                     <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-sky"/></svg>FIG. 10 / TOOL</span>
+                        <span><svg class="figmark"><use href="#ic-sky"/></svg>FIG. 04 / TOOL</span>
                         <span class="tag">OPEN SKY &middot; NO LOGIN</span>
                     </div>
                     <h3>Mugilu</h3>
@@ -1127,7 +1026,7 @@
 
                 <article class="card span-4">
                     <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-swara"/></svg>FIG. 11 / TOOL</span>
+                        <span><svg class="figmark"><use href="#ic-swara"/></svg>FIG. 05 / TOOL</span>
                         <span class="tag">CC-BY &middot; NO LOGIN</span>
                     </div>
                     <h3>twelveswaras</h3>
@@ -1141,7 +1040,7 @@
         <!-- STORIES -->
         <section id="stories" class="block">
             <div class="section-head">
-                <span class="label"><span class="num">§03</span> STORIES / INVESTIGATIONS</span>
+                <span class="label"><span class="num">§02</span> STORIES / INVESTIGATIONS</span>
                 <h2>Data-driven investigations into how India actually works: <em>forests, farmers, livelihoods, rights.</em></h2>
             </div>
 
@@ -1197,10 +1096,112 @@
             </div>
         </section>
 
+        <!-- ABOUT -->
+        <section id="about" class="block">
+            <div class="section-head">
+                <span class="label"><span class="num">§03</span> ABOUT / SUBJECT</span>
+                <h2>Technology professional who took a <em>detour</em> through public policy, and never quite came back.</h2>
+            </div>
+
+            <div class="about-grid">
+                <figure class="portrait">
+                    <img src="mugshot.jpeg" alt="Sathya Sankaran, Urban Technologist and Bicycle Mayor of Bengaluru" loading="lazy">
+                    <figcaption class="caption"><span class="fig">FIG. 11</span> &nbsp; Sankaran, S. Primary subject. Bengaluru, IN.</figcaption>
+                </figure>
+
+                <div class="prose">
+                    <p>Three decades transforming cities through technology and data-driven solutions in <strong>sustainable mobility</strong> and <strong>energy transition</strong>. The unusual mix (a technology background plus a PG in Public Policy) is the whole point: most urban problems aren't blocked by ignorance, they're blocked by the gap between people who can read systems and people who can read the bylaw.</p>
+
+                    <p>The work itself is in the cards: the open tools up in <a href="#tools">§01</a>, and the platforms, initiative, book and podcast just below in <a href="#work">§04</a>. What stays here is where the time goes now.</p>
+
+                    <h3>Currently</h3>
+                    <ul>
+                        <li><strong>CEO, Rainmatter Foundation.</strong> Thesis-based investing for urban sustainability, waste, energy transition, and sustainable materials.</li>
+                        <li><strong>Co-Founder, Urban Morph.</strong> Full-stack, AI-native urban-tech venture studio. Ships AltMo and SyntheSYS.</li>
+                        <li><strong>Bicycle Mayor of Bengaluru.</strong> Cycling infrastructure and sustainable mobility advocacy.</li>
+                    </ul>
+                    <p style="font-size: 14.5px; color: var(--muted);">Also associated with <strong style="color: var(--ink-2);">WattsNext Energy</strong>, <strong style="color: var(--ink-2);">Bioman Technologies</strong>, and as visiting/adjunct faculty at <strong style="color: var(--ink-2);">Kautilya School of Public Policy</strong> and <strong style="color: var(--ink-2);">Mount Carmel College</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRACK RECORD -->
+        <section id="work" class="block">
+            <div class="section-head">
+                <span class="label"><span class="num">§04</span> TRACK RECORD</span>
+                <h2><em>Two AI-native platforms</em>, an initiative, a book, and a podcast.</h2>
+            </div>
+
+            <div class="impact-grid">
+
+                <article class="card feature">
+                    <div class="fignum">
+                        <span><svg class="figmark"><use href="#ic-bike"/></svg>FIG. 06 / PLATFORM</span>
+                        <span class="tag">AT URBAN MORPH</span>
+                    </div>
+                    <h3>AltMo</h3>
+                    <div class="bignum">500<span class="unit">+ t</span></div>
+                    <div class="iso bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="iso-cap">each bar = 100 t CO₂ avoided</div>
+                    <p>GPS-verified mobility intelligence, double-booked: tonnes of CO₂ avoided for ESG and city-planning ledgers, active minutes for employee wellness. Its data drove a <strong>342% increase</strong> in cycling &amp; walking allocation in Bengaluru's Master Plan. Challenges, leaderboards, and city analytics on top.</p>
+                    <div class="subnums">
+                        <div><b>9,000+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>users</div>
+                        <div><b>100+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>cities</div>
+                        <div><b>900+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>organisations</div>
+                        <div class="iso-cap" style="grid-column:1/-1">● scaled: users ×1k · cities ×10 · orgs ×100</div>
+                    </div>
+                    <a href="https://www.altmo.app" class="visit" target="_blank" rel="noopener">altmo.app</a>
+                </article>
+
+                <article class="card span-5">
+                    <div class="fignum">
+                        <span><svg class="figmark"><use href="#ic-nodes"/></svg>FIG. 07 / AI PLATFORM</span>
+                        <span class="tag">AT URBAN MORPH · AI-NATIVE</span>
+                    </div>
+                    <h3>SyntheSYS</h3>
+                    <p>AI-powered urban intelligence for understanding and actioning progress at scale, ward to nation. Currently shipping: dashboards for the <strong>Karnataka Digital Economy Mission</strong>, <strong>Neighbourhoods of the Future</strong> (<a href="https://notf.in" target="_blank" rel="noopener">notf.in</a>) for citizen-organised hyperlocal action, and digital information portals for a range of businesses and public-good initiatives.</p>
+                    <a href="https://www.urbanmorph.com/synthesys.html" class="visit" target="_blank" rel="noopener">urbanmorph.com/synthesys</a>
+                </article>
+
+                <article class="card span-5">
+                    <div class="fignum">
+                        <span><svg class="figmark"><use href="#ic-relief"/></svg>FIG. 08 / INITIATIVE</span>
+                        <span class="tag">UN AWARD · NOBEL NOM.</span>
+                    </div>
+                    <h3>Relief Riders</h3>
+                    <div class="bignum" style="font-size: clamp(3rem, 6.5vw, 5rem); margin: 8px 0 20px;">725</div>
+                    <p>COVID-19 cycling response. Volunteers ferrying medicine, oxygen, food across 12 Indian cities. 2021 UN World Bicycle Day Special Award; 2022 Nobel Peace Prize nomination.</p>
+                    <a href="https://youtu.be/hXJ6El7VQWE?si=bky_nvR8UiP9Za1b" class="visit" target="_blank" rel="noopener">Watch the story</a>
+                </article>
+
+                <article class="card span-7">
+                    <div class="fignum">
+                        <span><svg class="figmark"><use href="#ic-book"/></svg>FIG. 09 / BOOK</span>
+                        <span class="tag">2026 · NAMMA RAILU</span>
+                    </div>
+                    <h3>Break the Block</h3>
+                    <div class="bignum" style="font-size: clamp(3rem, 6.5vw, 5rem); margin: 8px 0 20px;">12</div>
+                    <p>The brutally honest playbook for changing your city when you have no power, no money, and no political connections. Twelve lessons drawn from the decade-long <strong>Namma Railu</strong> campaign: five citizens, ten years, one Union Cabinet approval (2020) for Bengaluru Suburban Rail.</p>
+                    <a href="https://www.breaktheblock.in" class="visit" target="_blank" rel="noopener">breaktheblock.in</a>
+                </article>
+
+                <article class="card span-12">
+                    <div class="fignum">
+                        <span><svg class="figmark"><use href="#ic-wave"/></svg>FIG. 10 / PODCAST</span>
+                        <span class="tag">ONGOING SINCE 2021</span>
+                    </div>
+                    <h3>OoruLabs</h3>
+                    <p>India's premier urban-affairs podcast. Long conversations with the people who hold or move levers on cities: Indian transit chiefs, mayors, ward activists, climate scientists, and an Amsterdam Deputy Mayor or Dutch cycling envoy when the question calls for it.</p>
+                    <a href="https://podcast.oorulabs.com" class="visit" target="_blank" rel="noopener">podcast.oorulabs.com</a>
+                </article>
+
+            </div>
+        </section>
+
         <!-- AFFILIATIONS -->
         <section id="affiliations" class="block">
             <div class="section-head">
-                <span class="label"><span class="num">§04</span> AFFILIATIONS / ROSTER</span>
+                <span class="label"><span class="num">§05</span> AFFILIATIONS / ROSTER</span>
                 <h2>Where the time goes: <em>concurrent</em>, not chronological.</h2>
             </div>
 
@@ -1259,7 +1260,7 @@
         <!-- CONTACT -->
         <section id="contact" class="block" style="border-bottom: 0;">
             <div class="section-head">
-                <span class="label"><span class="num">§05</span> CONTACT / CHANNELS</span>
+                <span class="label"><span class="num">§06</span> CONTACT / CHANNELS</span>
                 <h2>Open to collaboration on cities, mobility, climate, and the messy middle.</h2>
             </div>
 
