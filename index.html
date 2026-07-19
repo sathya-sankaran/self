@@ -204,7 +204,7 @@
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "AI Urban Intelligence",
       "operatingSystem": "Web",
-      "description": "AI-powered urban intelligence platform for understanding and actioning progress at scale, ward to nation. Currently shipping dashboards for the Karnataka Digital Economy Mission, Neighbourhoods of the Future (notf.in) for citizen-organised hyperlocal action, and digital information portals for businesses and public-good initiatives.",
+      "description": "AI-powered services for orchestrating and coordinating urban solutions and accelerating progress at scale, ward to nation. Currently shipping Active Mobility policy to programs orchestration via cfam.in, district and vertical dashboards for the Karnataka Digital Economy Mission, Neighbourhoods of the Future (notf.in) for citizen-organised hyperlocal action, and digital information synthesis for businesses and public-good initiatives.",
       "creator": {"@id": "https://www.sathyasankaran.com/#sathya"},
       "publisher": {"@type": "Organization", "name": "Urban Morph", "url": "https://www.urbanmorph.com"}
     }
@@ -553,6 +553,12 @@
         .card:hover .visit::after { transform: translate(2px, -2px); }
 
         .card.feature { grid-column: span 7; padding: 40px; }
+        .card.feature p { max-width: 66ch; }
+        .card.feature .feature-row { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: flex-start; margin: 16px 0 28px; }
+        .card.feature .feature-metric { flex: 0 0 auto; }
+        .card.feature .feature-metric .bignum { margin: 0 0 12px; }
+        .card.feature .feature-row > p { flex: 1 1 320px; margin: 0; max-width: 54ch; }
+        .card.feature .feature-row .subnums { flex: 1 1 200px; margin: 0; padding: 0; border: 0; grid-template-columns: 1fr; gap: 14px; }
         .card.feature .bignum {
             font-family: var(--mono);
             font-weight: 700;
@@ -1057,7 +1063,7 @@
                     <div class="story-main">
                         <span class="story-kicker">Rural India · Sustainability · 2026</span>
                         <span class="story-title">The Ground Beneath the Report Card</span>
-                        <span class="story-dek">India grades 2.6 lakh villages on how they are doing now, not whether they can last. Weigh the land, and the grain belt that looks ahead is the one spending its water fastest.</span>
+                        <span class="story-dek">India grades 2.6 lakh villages on how they're doing today, not whether they can last. Its showcase grain belt is also the fastest at draining its own water.</span>
                     </div>
                     <span class="story-link">canitlast.surge.sh</span>
                 </a>
@@ -1081,7 +1087,7 @@
                     <div class="story-main">
                         <span class="story-kicker">Agriculture · FPOs</span>
                         <span class="story-title">The Hollow Collective</span>
-                        <span class="story-dek">The real state of India's farmer producer companies, told through the data.</span>
+                        <span class="story-dek">India helped small farmers form nearly 50,000 companies they own together. Just 4% employ even one paid manager.</span>
                     </div>
                     <span class="story-link">fpo-story.surge.sh</span>
                 </a>
@@ -1089,7 +1095,7 @@
                     <div class="story-main">
                         <span class="story-kicker">Livelihoods · Women · SHGs</span>
                         <span class="story-title">The Ground They Stand On</span>
-                        <span class="story-dek">India's nine crore women in self-help groups, and the climb that still matters.</span>
+                        <span class="story-dek">India's self-help groups are the world's largest financial-inclusion effort: 9 crore women across 8.6 million groups. Yet even the best-served state leaves 71% stuck at saving, never reaching credit.</span>
                     </div>
                     <span class="story-link">shg-story.surge.sh</span>
                 </a>
@@ -1116,7 +1122,7 @@
 
                     <h3>Currently</h3>
                     <ul>
-                        <li><strong>CEO, Rainmatter Foundation.</strong> Thesis-based investing for urban sustainability, waste, energy transition, and sustainable materials.</li>
+                        <li><strong>CEO, Rainmatter Foundation.</strong> Enabling the increase of climate-resilient places across urban, rural and the wild.</li>
                         <li><strong>Co-Founder, Urban Morph.</strong> Full-stack, AI-native urban-tech venture studio. Ships AltMo and SyntheSYS.</li>
                         <li><strong>Bicycle Mayor of Bengaluru.</strong> Cycling infrastructure and sustainable mobility advocacy.</li>
                     </ul>
@@ -1134,58 +1140,64 @@
 
             <div class="impact-grid">
 
-                <article class="card feature">
+                <article class="card feature span-12">
                     <div class="fignum">
                         <span><svg class="figmark"><use href="#ic-bike"/></svg>FIG. 06 / PLATFORM</span>
                         <span class="tag">AT URBAN MORPH</span>
                     </div>
                     <h3>AltMo</h3>
-                    <div class="bignum">500<span class="unit">+ t</span></div>
-                    <div class="iso bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="iso-cap">each bar = 100 t CO₂ avoided</div>
-                    <p>GPS-verified mobility intelligence, double-booked: tonnes of CO₂ avoided for ESG and city-planning ledgers, active minutes for employee wellness. Its data drove a <strong>342% increase</strong> in cycling &amp; walking allocation in Bengaluru's Master Plan. Challenges, leaderboards, and city analytics on top.</p>
-                    <div class="subnums">
-                        <div><b>9,000+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>users</div>
-                        <div><b>100+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>cities</div>
-                        <div><b>900+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>organisations</div>
-                        <div class="iso-cap" style="grid-column:1/-1">● scaled: users ×1k · cities ×10 · orgs ×100</div>
+                    <div class="feature-row">
+                        <div class="feature-metric">
+                            <div class="bignum">500<span class="unit">+ t</span></div>
+                            <div class="iso bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                            <div class="iso-cap">each bar = 100 t CO₂ avoided</div>
+                        </div>
+                        <p>GPS-verified mobility intelligence, double-booked: tonnes of CO₂ avoided for ESG and city-planning ledgers, active minutes for employee wellness. Its data drove a <strong>342% increase</strong> in cycling &amp; walking allocation in Bengaluru's Master Plan, helped establish 20+&nbsp;km of cycle tracks, and won Silvassa Smart City an Excellence in Innovation award. Challenges, leaderboards, and city analytics on top.</p>
+                        <div class="subnums">
+                            <div><b>9,000+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>users</div>
+                            <div><b>100+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>cities</div>
+                            <div><b>900+</b><span class="iso dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>organisations</div>
+                            <div class="iso-cap" style="grid-column:1/-1">● scaled: users ×1k · cities ×10 · orgs ×100</div>
+                        </div>
                     </div>
                     <a href="https://www.altmo.app" class="visit" target="_blank" rel="noopener">altmo.app</a>
                 </article>
 
-                <article class="card span-5">
+                <article class="card span-6">
                     <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-nodes"/></svg>FIG. 07 / AI PLATFORM</span>
-                        <span class="tag">AT URBAN MORPH · AI-NATIVE</span>
-                    </div>
-                    <h3>SyntheSYS</h3>
-                    <p>AI-powered urban intelligence for understanding and actioning progress at scale, ward to nation. Currently shipping: dashboards for the <strong>Karnataka Digital Economy Mission</strong>, <strong>Neighbourhoods of the Future</strong> (<a href="https://notf.in" target="_blank" rel="noopener">notf.in</a>) for citizen-organised hyperlocal action, and digital information portals for a range of businesses and public-good initiatives.</p>
-                    <a href="https://www.urbanmorph.com/synthesys.html" class="visit" target="_blank" rel="noopener">urbanmorph.com/synthesys</a>
-                </article>
-
-                <article class="card span-5">
-                    <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-relief"/></svg>FIG. 08 / INITIATIVE</span>
+                        <span><svg class="figmark"><use href="#ic-relief"/></svg>FIG. 07 / INITIATIVE</span>
                         <span class="tag">UN AWARD · NOBEL NOM.</span>
                     </div>
                     <h3>Relief Riders</h3>
-                    <div class="bignum" style="font-size: clamp(3rem, 6.5vw, 5rem); margin: 8px 0 20px;">725</div>
+                    <div class="bignum" style="font-size: clamp(3rem, 6.5vw, 5rem); margin: 8px 0 2px;">725</div>
+                    <div class="iso-cap" style="margin: 0 0 20px;">volunteers</div>
                     <p>COVID-19 cycling response. Volunteers ferrying medicine, oxygen, food across 12 Indian cities. 2021 UN World Bicycle Day Special Award; 2022 Nobel Peace Prize nomination.</p>
                     <a href="https://youtu.be/hXJ6El7VQWE?si=bky_nvR8UiP9Za1b" class="visit" target="_blank" rel="noopener">Watch the story</a>
                 </article>
 
-                <article class="card span-7">
+                <article class="card span-6">
                     <div class="fignum">
-                        <span><svg class="figmark"><use href="#ic-book"/></svg>FIG. 09 / BOOK</span>
+                        <span><svg class="figmark"><use href="#ic-book"/></svg>FIG. 08 / BOOK</span>
                         <span class="tag">2026 · NAMMA RAILU</span>
                     </div>
                     <h3>Break the Block</h3>
-                    <div class="bignum" style="font-size: clamp(3rem, 6.5vw, 5rem); margin: 8px 0 20px;">12</div>
+                    <div class="bignum" style="font-size: clamp(3rem, 6.5vw, 5rem); margin: 8px 0 2px;">12</div>
+                    <div class="iso-cap" style="margin: 0 0 20px;">lessons</div>
                     <p>The brutally honest playbook for changing your city when you have no power, no money, and no political connections. Twelve lessons drawn from the decade-long <strong>Namma Railu</strong> campaign: five citizens, ten years, one Union Cabinet approval (2020) for Bengaluru Suburban Rail.</p>
                     <a href="https://www.breaktheblock.in" class="visit" target="_blank" rel="noopener">breaktheblock.in</a>
                 </article>
 
-                <article class="card span-12">
+                <article class="card span-6">
+                    <div class="fignum">
+                        <span><svg class="figmark"><use href="#ic-nodes"/></svg>FIG. 09 / AI SERVICES</span>
+                        <span class="tag">AT URBAN MORPH · AI-NATIVE</span>
+                    </div>
+                    <h3>SyntheSYS</h3>
+                    <p>AI-powered services for orchestrating and coordinating urban solutions and accelerating progress at scale, ward to nation. Currently shipping: Active Mobility policy to programs orchestration via <a href="https://cfam.in" target="_blank" rel="noopener">cfam.in</a>, district and vertical dashboards for the <strong>Karnataka Digital Economy Mission</strong>, <strong>Neighbourhoods of the Future</strong> (<a href="https://notf.in" target="_blank" rel="noopener">notf.in</a>) for citizen-organised hyperlocal action, and digital information synthesis for a range of businesses and public-good initiatives.</p>
+                    <a href="https://www.urbanmorph.com/synthesys.html" class="visit" target="_blank" rel="noopener">urbanmorph.com/synthesys</a>
+                </article>
+
+                <article class="card span-6">
                     <div class="fignum">
                         <span><svg class="figmark"><use href="#ic-wave"/></svg>FIG. 10 / PODCAST</span>
                         <span class="tag">ONGOING SINCE 2021</span>
