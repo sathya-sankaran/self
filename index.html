@@ -225,7 +225,7 @@
     }
     </script>
 
-    <!-- Structured Data — ItemList: data stories (generated from the story cards below; keep in step) -->
+    <!-- Structured Data — ItemList: data stories (keep in step with the story tiles below) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1006,61 +1006,49 @@
         }
 
         /* ------------ Stories index ------------ */
-        .stories { border-top: 1px solid var(--ink); }
-        .story {
+        .stories {
             display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 32px;
-            padding: 26px 16px;
-            border-bottom: 1px solid var(--rule);
-            text-decoration: none;
-            color: var(--ink);
-            transition: background 0.15s;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 40px 28px;
+            border-top: 1px solid var(--ink);
+            padding-top: 28px;
         }
-        .story:hover { background: var(--paper-2); }
-        .story-main { display: flex; flex-direction: column; }
+        .story { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); }
+        .story img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1200 / 630;
+            object-fit: cover;
+            background: var(--ink);
+            border: 1px solid var(--rule);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .story:hover img { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(26, 24, 21, 0.18); }
         .story-kicker {
             font-family: var(--mono);
             font-size: 10.5px;
             letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 10px;
+            margin: 14px 0 6px;
         }
         .story-title {
             font-family: var(--sans);
             font-weight: 600;
-            font-size: 1.5rem;
-            letter-spacing: -0.02em;
-            line-height: 1.12;
+            font-size: 1.2rem;
+            letter-spacing: -0.015em;
+            line-height: 1.18;
             color: var(--ink);
-            margin-bottom: 8px;
         }
+        .story-title::after { content: "\00a0\2197"; font-size: 0.75em; color: var(--muted); }
         .story:hover .story-title { color: var(--accent); }
-        .story-dek {
-            font-size: 15px;
-            line-height: 1.55;
+        .story-hook {
+            font-size: 14.5px;
+            line-height: 1.5;
             color: var(--ink-2);
-            max-width: 64ch;
+            margin-top: 6px;
         }
-        .story-link {
-            font-family: var(--mono);
-            font-size: 11px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--muted);
-            white-space: nowrap;
-            align-self: center;
-        }
-        .story-link::after {
-            content: ' ↗';
-            color: var(--accent);
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        .story:hover .story-link { color: var(--ink); }
-        .story:hover .story-link::after { transform: translate(2px, -2px); }
 
         /* ------------ Plate (contact sheet) ------------ */
         .plate-grid {
@@ -1194,8 +1182,6 @@
             .affil-table tbody tr { display: block; padding: 22px 0; border-bottom: 1px solid var(--rule); }
             .affil-table .org { width: auto; font-size: 1.2rem; }
             .affil-table .role { width: auto; }
-            .story { grid-template-columns: 1fr; gap: 14px; padding: 22px 0; }
-            .story-link { align-self: start; }
             .plate-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-grid { grid-template-columns: 1fr; gap: 48px; }
             .channels li { grid-template-columns: 90px 1fr; }
@@ -1204,6 +1190,11 @@
             .colophon .right { text-align: center; }
         }
 
+        @media (max-width: 760px) {
+            .stories { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; padding-top: 20px; }
+            .story-kicker, .story-hook { display: none; }
+            .story-title { font-size: 0.98rem; margin-top: 8px; }
+        }
         @media (max-width: 600px) {
             .page { padding: 0 16px; }
             .topbar { font-size: 10px; padding: 14px 0; }
@@ -1404,108 +1395,82 @@
 
             <div class="stories">
                 <a class="story" href="https://el-nino.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Climate &middot; Monsoon &middot; Agriculture &middot; 2026</span>
-                        <span class="story-title">The Bill Arrives on Time</span>
-                        <span class="story-dek">El Niño is the one climate shock India sees coming months ahead, and the bill still arrives in full. 9 of 15 El Niño summers since 1950 ended in drought. The 2026 kharif crop bill could be about ₹1.1 lakh crore.</span>
-                    </div>
-                    <span class="story-link">el-nino.surge.sh</span>
+                    <img src="stories/el-nino.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Climate &middot; Monsoon &middot; Agriculture</span>
+                    <span class="story-title">The Bill Arrives on Time</span>
+                    <span class="story-hook">India sees El Niño coming months ahead. The bill still arrives in full.</span>
                 </a>
                 <a class="story" href="https://land-ledger.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Land &middot; Water &middot; Map &middot; 2026</span>
-                        <span class="story-title">Land Ledger</span>
-                        <span class="story-dek">One map that brings seven stories on India's soil, water, food and farmers together, district by district. For every 100 kg of nitrogen that goes onto the fields, the harvest carries away about 48, and soil-test labs disagree with each other more than the soils do.</span>
-                    </div>
-                    <span class="story-link">land-ledger.surge.sh</span>
+                    <img src="stories/land-ledger.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Land &middot; Water &middot; Map</span>
+                    <span class="story-title">Land Ledger</span>
+                    <span class="story-hook">Of every 100 kg of nitrogen on the fields, the harvest carries away about 48.</span>
                 </a>
                 <a class="story" href="https://same-heap.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Food &middot; Agriculture &middot; 2026</span>
-                        <span class="story-title">Where India&rsquo;s Food Goes</span>
-                        <span class="story-dek">India grows more food than it needs and throws away a tenth of it. The farmer who grew your vegetables keeps about a third of what you pay. And owning the chain does not save the soil or the aquifer.</span>
-                    </div>
-                    <span class="story-link">same-heap.surge.sh</span>
+                    <img src="stories/same-heap.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Food &middot; Agriculture</span>
+                    <span class="story-title">Where India&rsquo;s Food Goes</span>
+                    <span class="story-hook">India grows more food than it needs and throws away a tenth of it.</span>
                 </a>
                 <a class="story" href="https://upwind.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Air &middot; Waste &middot; 2026</span>
-                        <span class="story-title">Upwind</span>
-                        <span class="story-dek">Only 30 percent of Delhi's winter air is its own. Seven of the eleven coal plants within 300 km are exempt from sulphur controls, and six of those seven sit upwind of the city being blamed. Every figure carries a source, a date and a tag.</span>
-                    </div>
-                    <span class="story-link">upwind.surge.sh</span>
+                    <img src="stories/upwind.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Air &middot; Waste</span>
+                    <span class="story-title">Upwind</span>
+                    <span class="story-hook">Only 30 percent of Delhi&rsquo;s winter air is its own.</span>
                 </a>
                 <a class="story" href="https://not-the-bird.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Commons · Emergence · 2026</span>
-                        <span class="story-title">Influence the Rule, Not the Bird</span>
-                        <span class="story-dek">How to use emergence to steer action in the commons. Birds in formation follow a few simple rules, and the formation is what emerges. The same holds for air, water, soil, forests, energy and materials: money and effort mostly add speed, and only the rules change direction.</span>
-                    </div>
-                    <span class="story-link">not-the-bird.surge.sh</span>
+                    <img src="stories/not-the-bird.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Commons · Emergence</span>
+                    <span class="story-title">Influence the Rule, Not the Bird</span>
+                    <span class="story-hook">Money and effort add speed. Only the rules change direction.</span>
                 </a>
                 <a class="story" href="https://made-optional.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Business · Biodiversity · 2026</span>
-                        <span class="story-title">The Question They Made Optional</span>
-                        <span class="story-dek">786 of India's biggest listed companies operate beside a forest, wetland or coast. Just 33 said what they actually do there. The question was optional, so the rest broke no rule.</span>
-                    </div>
-                    <span class="story-link">made-optional.surge.sh</span>
+                    <img src="stories/made-optional.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Business · Biodiversity</span>
+                    <span class="story-title">The Question They Made Optional</span>
+                    <span class="story-hook">786 big companies sit beside nature. 33 said what they do there.</span>
                 </a>
                 <a class="story" href="https://dead-reckoning.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Soil · Agriculture · 2026</span>
-                        <span class="story-title">The Best-Measured Soil in the World</span>
-                        <span class="story-dek">India tests its farmland more thoroughly than any country on Earth: over 5 million samples, 12 readings each. More than half comes back low on carbon, and there is no second opinion to check the readings against.</span>
-                    </div>
-                    <span class="story-link">dead-reckoning.surge.sh</span>
+                    <img src="stories/dead-reckoning.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Soil · Agriculture</span>
+                    <span class="story-title">The Best-Measured Soil in the World</span>
+                    <span class="story-hook">Over 5 million soil samples a year, and no second opinion.</span>
                 </a>
                 <a class="story" href="https://pbr-story.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Biodiversity · Governance · 2026</span>
-                        <span class="story-title">The Register No One Reads</span>
-                        <span class="story-dek">India built 2.72 lakh People's Biodiversity Registers to put villages in charge of the nature around them. Two have been formally approved.</span>
-                    </div>
-                    <span class="story-link">pbr-story.surge.sh</span>
+                    <img src="stories/pbr-story.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Biodiversity · Governance</span>
+                    <span class="story-title">The Register No One Reads</span>
+                    <span class="story-hook">2.72 lakh People&rsquo;s Biodiversity Registers. Two formally approved.</span>
                 </a>
                 <a class="story" href="https://canitlast.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Rural India · Sustainability · 2026</span>
-                        <span class="story-title">The Ground Beneath the Report Card</span>
-                        <span class="story-dek">India grades 2.6 lakh villages on how they're doing today, not whether they can last. Its showcase grain belt is also the fastest at draining its own water.</span>
-                    </div>
-                    <span class="story-link">canitlast.surge.sh</span>
+                    <img src="stories/canitlast.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Rural India · Sustainability</span>
+                    <span class="story-title">The Ground Beneath the Report Card</span>
+                    <span class="story-hook">Villages are graded on today, not on whether they can last.</span>
                 </a>
                 <a class="story" href="https://the-uncounted.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Wildlife · Human Conflict · 2026</span>
-                        <span class="story-title">The Uncounted</span>
-                        <span class="story-dek">India logs over 100,000 human-wildlife conflict incidents a year across 88 species, yet keeps a national death count for just two.</span>
-                    </div>
-                    <span class="story-link">the-uncounted.surge.sh</span>
+                    <img src="stories/the-uncounted.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Wildlife · Human Conflict</span>
+                    <span class="story-title">The Uncounted</span>
+                    <span class="story-hook">100,000 conflict incidents a year. Deaths counted for two species.</span>
                 </a>
                 <a class="story" href="https://whose-forest.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Forests · CFR Rights · 2026</span>
-                        <span class="story-title">Whose Forest Is It?</span>
-                        <span class="story-dek">India mapped 3.46 crore hectares of community forest that local communities could govern. Less than 3% has been recognised.</span>
-                    </div>
-                    <span class="story-link">whose-forest.surge.sh</span>
+                    <img src="stories/whose-forest.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Forests · CFR Rights</span>
+                    <span class="story-title">Whose Forest Is It?</span>
+                    <span class="story-hook">Less than 3% of mapped community forest has been recognised.</span>
                 </a>
                 <a class="story" href="https://fpo-story.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Agriculture · FPOs · 2026</span>
-                        <span class="story-title">The Hollow Collective</span>
-                        <span class="story-dek">India helped small farmers form nearly 50,000 companies they own together. Just 4% employ even one paid manager.</span>
-                    </div>
-                    <span class="story-link">fpo-story.surge.sh</span>
+                    <img src="stories/fpo-story.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Agriculture · FPOs</span>
+                    <span class="story-title">The Hollow Collective</span>
+                    <span class="story-hook">Nearly 50,000 farmer companies. Just 4% employ a paid manager.</span>
                 </a>
                 <a class="story" href="https://shg-story.surge.sh" target="_blank" rel="noopener">
-                    <div class="story-main">
-                        <span class="story-kicker">Livelihoods · Women · SHGs · 2026</span>
-                        <span class="story-title">The Ground They Stand On</span>
-                        <span class="story-dek">India's self-help groups are the world's largest financial-inclusion effort: 9 crore women across 8.6 million groups. Yet even the best-served state leaves 71% stuck at saving, never reaching credit.</span>
-                    </div>
-                    <span class="story-link">shg-story.surge.sh</span>
+                    <img src="stories/shg-story.webp" alt="" width="720" height="378" loading="lazy" decoding="async">
+                    <span class="story-kicker">Livelihoods · Women · SHGs</span>
+                    <span class="story-title">The Ground They Stand On</span>
+                    <span class="story-hook">9 crore women in self-help groups. 71% never get past saving.</span>
                 </a>
             </div>
         </section>
