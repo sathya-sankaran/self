@@ -1,0 +1,6 @@
+#!/bin/sh
+# Keep the tool and story counts on index.html in step with the cards (scripts/counts.py).
+if git diff --cached --name-only | grep -qx index.html; then
+  python3 scripts/counts.py >/dev/null || exit 1
+  git add index.html
+fi
