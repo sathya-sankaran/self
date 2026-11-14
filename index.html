@@ -728,7 +728,6 @@
             letter-spacing: -0.035em;
             color: var(--ink);
             margin-bottom: 18px;
-            max-width: 18ch;
         }
         .hero h1 .accent { color: var(--accent); font-style: italic; font-weight: 500; }
         .hero h1 .strike { position: relative; }
@@ -741,7 +740,6 @@
             font-size: clamp(1.05rem, 1.6vw, 1.25rem);
             line-height: 1.55;
             color: var(--ink-2);
-            max-width: 56ch;
             margin-bottom: 24px;
             font-weight: 400;
         }
@@ -821,7 +819,6 @@
         .portrait .caption .fig { color: var(--accent); }
 
         .prose {
-            max-width: 65ch;
             font-size: 17px;
             line-height: 1.7;
         }
@@ -1229,8 +1226,7 @@
 
             /* Hero: soft-wrap H1, drop meta strip rule, single-column meta */
             .hero { padding: 56px 0 72px; }
-            .hero .hard-break { display: none; }
-            .hero h1 { max-width: 18ch; letter-spacing: -0.03em; }
+            .hero h1 { letter-spacing: -0.03em; }
             .hero .meta-strip { grid-template-columns: 1fr; gap: 8px; margin-bottom: 40px; }
             .hero .meta-strip .rule { display: none; }
             .hero .lead { margin-bottom: 36px; }
@@ -1320,9 +1316,8 @@
             </div>
 
             <h1 class="reveal r2">
-                Three decades<br class="hard-break">
-                arguing with cities:<br class="hard-break">
-                in <span class="accent">code</span>, in policy memos,<br class="hard-break">
+                Three decades arguing with cities:
+                in <span class="accent">code</span>, in policy memos,
                 and from a bicycle saddle.
             </h1>
 
